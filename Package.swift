@@ -8,7 +8,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/providentiaww/Bolt-swift.git", from: "5.0.0"),
-        .package(url: "https://github.com/antitypical/Result.git", from: "3.2.4"),
+        .package(url: "https://github.com/providentiaww/Result.git", from: "5.0.0"),
         .package(url: "https://github.com/providentiaww/LoremSwiftum.git", from: "5.0.0"),
     ],
     targets: [
