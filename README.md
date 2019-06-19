@@ -13,13 +13,13 @@
 
 ## Requirements
 
-* iOS 10.0 or higher / macOS 10.12 or higher / Ubuntu Linux 14.04 or higher 
+* iOS 10.0 or higher / macOS 10.12 or higher / Ubuntu Linux 14.04 or higher
 * Xcode 9.0 or newer for iOS or macOS
 * Swift 4.0
 
 ## Feedback
 
-Because this framework is open source it is best for most situations to post on Stack Overflow and tag it **[Theo](http://stackoverflow.com/questions/tagged/theo)**. If you do 
+Because this framework is open source it is best for most situations to post on Stack Overflow and tag it **[Theo](http://stackoverflow.com/questions/tagged/theo)**. If you do
 find a bug please file an issue or issue a PR for any features or fixes.
 You are also most welcome to join the conversation in the #neo4j-swift channel in the [neo4j-users Slack](http://neo4j-users-slack-invite.herokuapp.com)
 
@@ -30,8 +30,9 @@ You can install Theo in a number of ways
 Add the following line to your Package dependencies array:
 
 ```swift
-.Package(url: "https://github.com/Neo4j-Swift/Neo4j-Swift.git”, majorVersion: 4, minor: 0)
+.package(url: "https://github.com/provdentiaww/Neo4j-Swift.git”, from: "5.0.0")
 ```
+
 Run `swift build` to build your project, now with Theo included and ready to be used from your source
 
 ### CococaPods
@@ -275,9 +276,9 @@ In the example above, we already executed a few cypher queries. In the following
 
 ```swift
 let query = """
-            MATCH (u:User {username: {user} }) WITH u 
-            MATCH (u)-[:FOLLOWS*0..1]->(f) WITH DISTINCT f,u 
-            MATCH (f)-[:LASTPOST]-(lp)-[:NEXTPOST*0..3]-(p) 
+            MATCH (u:User {username: {user} }) WITH u
+            MATCH (u)-[:FOLLOWS*0..1]->(f) WITH DISTINCT f,u
+            MATCH (f)-[:LASTPOST]-(lp)-[:NEXTPOST*0..3]-(p)
             RETURN p.contentId as contentId, p.title as title, p.tagstr as tagstr, p.timestamp as timestamp, p.url as url, f.username as username, f=u as owner
             """
 let params: [String:PackProtocol] = ["user": "ajordan"]
@@ -304,4 +305,3 @@ There is a file called, `TheoBoltConfig.json.example` which you should copy to `
 
 * [Niklas Saers](http://niklas.sasers.com/) ([@niklassaers](https://twitter.com/niklassaers))
 * [Cory Wiles](http://www.corywiles.com/) ([@kwylez](https://twitter.com/kwylez))
-
